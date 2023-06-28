@@ -10,6 +10,17 @@ platform :ios do
     # For example, you can use tools like SwiftLint or custom linting scripts
   end
 
+platform :ios do
+  desc "Run tests"
+  lane :run_tests do
+    scan(
+      scheme: "hello-harnessTests",
+      clean: true,
+      code_coverage: true
+    )
+  end
+end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
     app_id = ENV["APP_ID"]
