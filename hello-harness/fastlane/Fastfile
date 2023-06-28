@@ -4,6 +4,12 @@ require 'base64'
 default_platform(:ios)
 
 platform :ios do
+  desc "Perform lint validations"
+  lane :do_lint_validations do
+    # Add your lint validation steps here
+    # For example, you can use tools like SwiftLint or custom linting scripts
+  end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
     app_id = ENV["APP_ID"]
